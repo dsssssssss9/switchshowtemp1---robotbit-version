@@ -2,15 +2,19 @@ input.onButtonPressed(Button.A, function () {
     if (input.temperature() == 20 || (input.temperature() == 21 || input.temperature() == 22)) {
         basic.showNumber(23)
         strip.showColor(neopixel.colors(NeoPixelColors.Purple))
+        robotbit.MotorStopAll()
     } else if (input.temperature() == 24 || input.temperature() == 25) {
         basic.showNumber(24)
         strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        robotbit.MotorStopAll()
     } else if (input.temperature() == 26 || (input.temperature() == 27 || (input.temperature() == 28 || input.temperature() == 29))) {
         basic.showNumber(28)
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
+        robotbit.MotorStopAll()
     } else if (input.temperature() == 30 || (input.temperature() == 31 || input.temperature() == 32)) {
         basic.showNumber(32)
         strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+        robotbit.MotorStopAll()
     } else if (input.temperature() > 32) {
         for (let index = 0; index < 10; index++) {
             strip.showColor(neopixel.colors(NeoPixelColors.Red))
@@ -20,7 +24,7 @@ input.onButtonPressed(Button.A, function () {
         }
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         basic.showString("HOT!")
-        pins.analogWritePin(AnalogPin.P3, 1023)
+        robotbit.MotorRun(robotbit.Motors.M1A, 111)
     }
 })
 input.onButtonPressed(Button.AB, function () {
