@@ -27,20 +27,23 @@ input.onButtonPressed(Button.A, function () {
         robotbit.MotorRun(robotbit.Motors.M1A, 111)
     }
 })
-input.onButtonPressed(Button.AB, function () {
-    robotbit.MotorStopAll()
-})
 input.onButtonPressed(Button.B, function () {
     robotbit.MotorRun(robotbit.Motors.M1A, 148)
+})
+input.onButtonPressed(Button.AB, function () {
+    robotbit.MotorStopAll()
 })
 let strip: neopixel.Strip = null
 let TEMP = 0
 let SWITCHER = 0
 strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+strip.clear()
 strip.show()
 robotbit.MotorStopAll()
 basic.showIcon(IconNames.Yes)
 basic.forever(function () {
+    SWITCHER = input.temperature()
+    basic.showNumber(SWITCHER)
     switch (SWITCHER) {
     case 20:
     case 21:
@@ -64,11 +67,36 @@ basic.forever(function () {
     case 31:
     case 32: {
         TEMP = 39
-        pins.analogWritePin(AnalogPin.P3, 1023)
+        
         break;
+    
     }
-    default: {
-        TEMP = 23
     }
+if (TEMP == 23) {
+        basic.showNumber(23)
+        strip.showColor(neopixel.colors(NeoPixelColors.Purple))
+        robotbit.MotorStopAll()
+    } else if (TEMP == 24) {
+        basic.showNumber(24)
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+        robotbit.MotorStopAll()
+    } else if (TEMP == 28) {
+        basic.showNumber(28)
+        strip.showColor(neopixel.colors(NeoPixelColors.Green))
+        robotbit.MotorStopAll()
+    } else if (TEMP == 32) {
+        basic.showNumber(32)
+        strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+        robotbit.MotorStopAll()
+    } else if (input.temperature() >= 39) {
+        for (let index = 0; index < 10; index++) {
+            strip.showColor(neopixel.colors(NeoPixelColors.Red))
+            basic.pause(100)
+            strip.showColor(neopixel.colors(NeoPixelColors.Black))
+            basic.pause(100)
+        }
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+        basic.showString("HOT!")
+        robotbit.MotorRun(robotbit.Motors.M1A, 111)
     }
 })
