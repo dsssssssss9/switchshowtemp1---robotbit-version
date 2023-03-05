@@ -23,11 +23,19 @@ input.onButtonPressed(Button.A, function () {
         pins.analogWritePin(AnalogPin.P3, 1023)
     }
 })
+input.onButtonPressed(Button.AB, function () {
+    robotbit.MotorStopAll()
+})
+input.onButtonPressed(Button.B, function () {
+    robotbit.MotorRun(robotbit.Motors.M1A, 148)
+})
 let strip: neopixel.Strip = null
 let TEMP = 0
 let SWITCHER = 0
-strip = neopixel.create(DigitalPin.P1, 16, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 strip.show()
+robotbit.MotorStopAll()
+basic.showIcon(IconNames.Yes)
 basic.forever(function () {
     switch (SWITCHER) {
     case 20:
