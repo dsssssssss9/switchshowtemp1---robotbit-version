@@ -42,7 +42,7 @@ strip.show()
 robotbit.MotorStopAll()
 basic.showIcon(IconNames.Yes)
 /**
- * This example derived from Paul's code uses RobotBit extension to control the motor 
+ * This example derived from John's code uses RobotBit extension to control the motor 
  * 
  * but any motor controller should work if the appropriate extension is installed & the blocks altered accordingly
  * 

@@ -1,4 +1,4 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="X:VQ~IBx0Pq5(f+Wa2zp">strip</variable><variable id=":bp3GCj%$.LMm}9GW1pT">SWITCHER</variable><variable id="i#%qvHEOa:PzVBO5nMN.">TEMP</variable></variables><comment id="#eJW`[l`b*GQ86/_?SCG" x="398" y="313" h="245.45455932617188" w="470.70709228515625">This example derived from Paul's code uses RobotBit extension to control the motor 
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="X:VQ~IBx0Pq5(f+Wa2zp">strip</variable><variable id=":bp3GCj%$.LMm}9GW1pT">SWITCHER</variable><variable id="i#%qvHEOa:PzVBO5nMN.">TEMP</variable></variables><comment id="#eJW`[l`b*GQ86/_?SCG" x="398" y="313" h="245.45455932617188" w="470.70709228515625">This example derived from John's code uses RobotBit extension to control the motor 
 
 but any motor controller should work if the appropriate extension is installed &amp; the blocks altered accordingly
 
