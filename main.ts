@@ -41,6 +41,21 @@ strip.clear()
 strip.show()
 robotbit.MotorStopAll()
 basic.showIcon(IconNames.Yes)
+/**
+ * This example derived from Paul's code uses RobotBit extension to control the motor 
+ * 
+ * but any motor controller should work if the appropriate extension is installed & the blocks altered accordingly
+ * 
+ * Currently the motor ONLY turns if the temperature detected is above 30°c - change the SWITCH statements to suit your application
+ * 
+ * I have also left the previous BUTTON A test 
+ * 
+ * Also Press B to turn motor ON manually
+ * 
+ * Press A+B to turn motor off manually 
+ * 
+ * but bear in mind the FOREVER loop may over-ride this
+ */
 basic.forever(function () {
     SWITCHER = input.temperature()
     basic.showNumber(SWITCHER)
